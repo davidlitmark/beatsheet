@@ -29,6 +29,9 @@
       };
     };
 
+  // Current version
+  beatsheet.version = "0.1.0";
+
   // Find the distribution over the range. The range can be either the page count or word count.
   beatsheet.findDistribution = function(range) {
     // Adjusted for novels, w. stasis=death and 5-point finale
