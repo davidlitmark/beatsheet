@@ -34,7 +34,6 @@
 
   // Find the distribution over the range. The range can be either the page count or word count.
   beatsheet.findDistribution = function(range) {
-    // Adjusted for novels, w. stasis=death and 5-point finale
     var breakpoints = [1 / range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
     var distributor = distribute(range);
     return breakpoints.map(distributor);
