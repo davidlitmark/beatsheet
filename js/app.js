@@ -1,4 +1,4 @@
-// BeatSheet Calculator
+// BeatSheet Calculator (for novels)
 // (c) 2013 David Litmark
 // The beatsheet calculator may be freely distributed under the MIT license.
 
