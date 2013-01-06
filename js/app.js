@@ -4,7 +4,7 @@
 
 // The beat sheet distribution is based on the original Blake Snyder BS2 beat
 // sheet from his book Save The Cat!, but adjusted for novels based on my own
-// preferences:
+// preferences, and with additions from his latest book:
 //   * The length of act 1 is 1/5 instead of 1/4.
 //   * The statis=death beat is added. (1)
 //   * The five-point finale beats are added. (1)
