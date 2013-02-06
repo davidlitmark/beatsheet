@@ -1,17 +1,9 @@
+// Tests for BeatSheet Calculator (for novels)
+// (c) 2013 David Litmark
+
 var range = [1, 4, 8, 9, 10, 20, 24, 50, 68, 77, 81, 85, 89, 93, 97, 100];
-
-describe('#findDistribution', function() {
-  it('returns the breakpoints distributed over the range', function() {
-    var output = beatsheet.findDistribution(100);
-    expect(output).to.eql(range);
-  });
-});
-
-describe('#buildOutput', function() {
-  it('returns a description of the output', function() {
-    var output = beatsheet.buildOutput(range);
-    expect(output).to.eql(
-    	  "The opening image (1)"
+var expectedOutput = 
+		"The opening image (1)"
     	+ ",Theme Stated (4)"
     	+ ",Set-up (1 to 8)"
     	+ ",Statis=Death (9)"
@@ -31,6 +23,24 @@ describe('#buildOutput', function() {
     	+ ",Dig, Deep Down (93)"
     	+ ",The Execution of the New Plan (97)"
     	+ ",Final Image (100)"
-    	);
+
+describe('#findDistribution', function() {
+  it('returns the breakpoints distributed over the range', function() {
+    var output = beatsheet.findDistribution(100);
+    expect(output).to.eql(range);
   });
+});
+
+describe('#printBS', function() {
+  it('returns a description of the output', function() {
+    var output = beatsheet.printBS(range);
+    expect(output).to.eql(expectedOutput);
+  });
+});
+
+describe('#calc', function() {
+	it('returns the calculation based on given input', function() {
+	var output = beatsheet.calc(100);
+	expect(output).to.eql(expectedOutput); 
+	});
 });

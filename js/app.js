@@ -32,37 +32,74 @@
   // Current version
   beatsheet.version = "0.1.0";
 
+  var findBreakpoints = function(range) {
+    return [1 / range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
+  };
+
   // Find the distribution over the range. The range can be either the page count or word count.
   beatsheet.findDistribution = function(range) {
-    var breakpoints = [1 / range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
+    var breakpoints = findBreakpoints(range);
     var distributor = distribute(range);
     return breakpoints.map(distributor);
   };
 
+  // Internal function for returning beats
+  var getBeats = function () {
+    return [
+      "The opening image",
+      "Theme Stated",
+      "Set-up", 
+      "Statis=Death", 
+      "Catalyst", 
+      "Debate", 
+      "Break into two", 
+      "B-story", 
+      "Fun and Games", 
+      "Midpoint",
+      "Bad Guys close in",
+      "All Is Lost",
+      "Dark Night of the Soul",
+      "Break Into Three",
+      "Gathering the team",
+      "Executing the Plan",
+      "The Hight Tower Suprise",
+      "Dig, Deep Down",
+      "The Execution of the New Plan",
+      "Final Image"];
+  };
+
   // Builds the beatsheet as a long string
-  beatsheet.buildOutput = function(outline) {
+  beatsheet.printBS = function(outline) {
     var buf = [];
-    buf[0] = "The opening image (" + outline[0] + ")";
-    buf[1] = "Theme Stated (" + outline[1] + ")";
-    buf[2] = "Set-up (" + outline[0] + " to " + outline[2] + ")";
-    buf[3] = "Statis=Death (" + outline[3] + ")";
-    buf[4] = "Catalyst (" + outline[4] + ")";
-    buf[5] = "Debate (" + outline[4] + " to " + outline[5] + ")";
-    buf[6] = "Break into two (" + outline[5] + ")";
-    buf[7] = "B-story (" + outline[6] + ")";
-    buf[8] = "Fun and Games (" + outline[6] + " to " + outline[7] + ")";
-    buf[9] = "Midpoint (" + outline[7] + ")";
-    buf[10] = "Bad Guys close in (" + outline[7] + " to " + outline[8] + ")";
-    buf[11] = "All Is Lost (" + outline[8] + ")";
-    buf[12] = "Dark Night of the Soul (" + outline[8] + " to " + outline[9] + ")";
-    buf[13] = "Break Into Three (" + outline[9] + ")";
-    buf[14] = "Gathering the team (" + outline[10] + ")";
-    buf[15] = "Executing the Plan (" + outline[11] + ")";
-    buf[16] = "The Hight Tower Suprise (" + outline[12] + ")";
-    buf[17] = "Dig, Deep Down (" + outline[13] + ")";
-    buf[18] = "The Execution of the New Plan (" + outline[14] + ")";
-    buf[19] = "Final Image (" + outline[15] + ")";
+    var beats = getBeats();
+
+    buf[0] = beats[0] + " (" + outline[0] + ")";
+    buf[1] = beats[1] + " (" + outline[1] + ")";
+    buf[2] = beats[2] + " (" + outline[0] + " to " + outline[2] + ")";
+    buf[3] = beats[3] + " (" + outline[3] + ")";
+    buf[4] = beats[4] + " (" + outline[4] + ")";
+    buf[5] = beats[5] + " (" + outline[4] + " to " + outline[5] + ")";
+    buf[6] = beats[6] + " (" + outline[5] + ")";
+    buf[7] = beats[7] + " (" + outline[6] + ")";
+    buf[8] = beats[8] + " (" + outline[6] + " to " + outline[7] + ")";
+    buf[9] = beats[9] + " (" + outline[7] + ")";
+    buf[10] = beats[10] + " (" + outline[7] + " to " + outline[8] + ")";
+    buf[11] = beats[11] + " (" + outline[8] + ")";
+    buf[12] = beats[12] + " (" + outline[8] + " to " + outline[9] + ")";
+    buf[13] = beats[13] + " (" + outline[9] + ")";
+    buf[14] = beats[14] + " (" + outline[10] + ")";
+    buf[15] = beats[15] + " (" + outline[11] + ")";
+    buf[16] = beats[16] + " (" + outline[12] + ")";
+    buf[17] = beats[17] + " (" + outline[13] + ")";
+    buf[18] = beats[18] + " (" + outline[14] + ")";
+    buf[19] = beats[19] + " (" + outline[15] + ")";
     return buf.join();
   };
+
+  beatsheet.calc = function (size) {
+    var distribution = this.findDistribution(size);
+    return this.printBS(distribution);
+  };
+
 
 }).call(this);
