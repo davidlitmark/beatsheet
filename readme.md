@@ -1,17 +1,25 @@
 # Beat Sheet Calculator (for novels and short stories)
 
-TBD - what, why, how?
+The Beat Sheet returns a JSON consisting of the beats and page/word count that makes up the plot structure of a block buster according to the original [Blake Snyder beat sheet][bs2] from his book [Save The Cat!][sc] but also includes additions from [Save The Cat! Strikes Back][scsb]. To better suit novels and short stories the first act is a bit shorter, based on input from [Plot & Stucture (James Scott Bell)][ps] since a written text demands more involvement from the reader than a movie that you can just sit back and watch.
 
-The beat sheet is based on the original [Blake Snyder beat sheet][bs2] from his book [Save The Cat!][sc] but also includes additions from [Save The Cat! Strikes Back][scsb]. To better suit novels and short stories the first act is a bit shorter, based on input from [Plot & Stucture (James Scott Bell)][ps] since a written text demands more involvement from the reader than a movie that you can just sit back and watch.
-
-Compared to the orignal beat sheet the following are modifications are made:
+Compared to the original BS2 beat sheet the following are modifications are made:
 
   * The length of act 1 is 1/5 of the total length.
-  * The statis=death beat is added.
+  * The stasis=death beat is added.
   * The five-point finale beats are added.
 
-## How to use
-TBD
+## Usage
+Include the beatsheet.min.js file at the bottom of the body tag as normal, then use:
+
+    var output = beatsheet(100);
+
+In this example, beatsheet takes one parameter: the number of pages or the word count of your text. If you are writing a 400 pages novel use 400, if you're writing 90000 words, use 90000.
+The output is a JSON with all the beats and their page/word count:
+
+    "[{"beat":"The opening image","begin":1,"end":"NULL"},{"beat":"Theme Stated","begin":4,"end":"NULL"},{"beat":"Set-up","begin":1,"end":8},{"beat":"Statis=Death","begin":9,"end":"NULL"},{"beat":"Catalyst","begin":10,"end":"NULL"},{"beat":"Debate","begin":10,"end":20},{"beat":"Break into two","begin":20,"end":"NULL"},{"beat":"B-story","begin":24,"end":"NULL"},{"beat":"Fun and Games","begin":24,"end":50},{"beat":"Midpoint","begin":50,"end":"NULL"},{"beat":"Bad Guys close in","begin":50,"end":68},{"beat":"All Is Lost","begin":68,"end":"NULL"},{"beat":"Dark Night of the Soul","begin":68,"end":77},{"beat":"Break Into Three","begin":77,"end":"NULL"},{"beat":"Gathering the team","begin":81,"end":"NULL"},{"beat":"Executing the Plan","begin":85,"end":"NULL"},{"beat":"The Height Tower Surprise","begin":89,"end":"NULL"},{"beat":"Dig, Deep Down","begin":93,"end":"NULL"},{"beat":"The Execution of the New Plan","begin":97,"end":"NULL"},{"beat":"Final Image","begin":100,"end":"NULL"}]"
+
+## Browser compatability
+Modern browsers, and IE9+.
 
 ##Changelog
 
@@ -19,10 +27,10 @@ TBD
 Initial release
 
 ##Acknowlegements
-TBD
+Blake Snyder, for the BS2.
 
 ##License
-Beathsheet is freely distributable under the terms of the MIT license.
+Beatsheet is freely distributable under the terms of the MIT license.
 
 Copyright (c) 2013 David Litmark
 
@@ -31,7 +39,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 
 [sc]: http://www.amazon.com/Save-Last-Book-Screenwriting-Youll/dp/1932907009/ref=la_B001JOXDUA_1_1?ie=UTF8&qid=1357587839&sr=1-1 "Save The Cat!"
 
