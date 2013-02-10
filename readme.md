@@ -1,6 +1,6 @@
 # Beat Sheet Calculator (for novels and short stories)
 
-The Beat Sheet returns a JSON consisting of the beats and page/word count that makes up the plot structure of a block buster according to the original [Blake Snyder beat sheet][bs2] from his book [Save The Cat!][sc] but also includes additions from [Save The Cat! Strikes Back][scsb]. To better suit novels and short stories the first act is a bit shorter, based on input from [Plot & Stucture (James Scott Bell)][ps] since a written text demands more involvement from the reader than a movie that you can just sit back and watch.
+The Beat Sheet returns a JSON with all the beats and where they should appear in your story. The beats are from the Blake Snyder Beat Sheet or the "BS2" which includes the 15 essential "beats" or plot points that all stories should contain, according to the [Blake Snyder beat sheet][bs2] from his book [Save The Cat!][sc]. It also includes additions from [Save The Cat! Strikes Back][scsb]. To better suit novels and short stories the first act is a bit shorter, based on input from [Plot & Stucture (James Scott Bell)][ps]. The reasoning behind this is that a written text demands more involvement from the reader than a movie that you can just sit back and watch, thus we must involve the reader sooner.
 
 Compared to the original BS2 beat sheet the following are modifications are made:
 
@@ -9,11 +9,11 @@ Compared to the original BS2 beat sheet the following are modifications are made
   * The five-point finale beats are added.
 
 ## Usage
-Include the beatsheet.min.js file at the bottom of the body tag as normal, then use:
+Include beatsheet.min.js on your page, then use:
 
     var output = beatsheet(100);
 
-In this example, beatsheet takes one parameter: the number of pages or the word count of your text. If you are writing a 400 pages novel use 400, if you're writing 90000 words, use 90000.
+In this example, beatsheet takes one parameter: the projected number of pages (or words) in your novel (or short story). If you are writing a 100 page novel use 100, if you're writing 90000 words, use 90000.
 The output is a JSON with all the beats and their page/word count:
 
     "[{"beat":"The opening image","begin":1,"end":"NULL"},{"beat":"Theme Stated","begin":4,"end":"NULL"},{"beat":"Set-up","begin":1,"end":8},{"beat":"Statis=Death","begin":9,"end":"NULL"},{"beat":"Catalyst","begin":10,"end":"NULL"},{"beat":"Debate","begin":10,"end":20},{"beat":"Break into two","begin":20,"end":"NULL"},{"beat":"B-story","begin":24,"end":"NULL"},{"beat":"Fun and Games","begin":24,"end":50},{"beat":"Midpoint","begin":50,"end":"NULL"},{"beat":"Bad Guys close in","begin":50,"end":68},{"beat":"All Is Lost","begin":68,"end":"NULL"},{"beat":"Dark Night of the Soul","begin":68,"end":77},{"beat":"Break Into Three","begin":77,"end":"NULL"},{"beat":"Gathering the team","begin":81,"end":"NULL"},{"beat":"Executing the Plan","begin":85,"end":"NULL"},{"beat":"The Height Tower Surprise","begin":89,"end":"NULL"},{"beat":"Dig, Deep Down","begin":93,"end":"NULL"},{"beat":"The Execution of the New Plan","begin":97,"end":"NULL"},{"beat":"Final Image","begin":100,"end":"NULL"}]"
@@ -23,7 +23,7 @@ Modern browsers, and IE9+.
 
 ##Changelog
 
-0.1.0
+0.1.0 (2013/02/10)
 Initial release
 
 ##Acknowlegements
