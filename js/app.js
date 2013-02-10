@@ -7,19 +7,20 @@
 // preferences, and with additions from his latest book:
 //   * The length of act 1 is 1/5 instead of 1/4.
 //   * The statis=death beat is added. (1)
-//   * The five-point finale beats are added. (1)
+//   * The beats from the five-point finale are added. (1)
 //
 // (1) Mentioned in the book Save The Cat! Strikes Back.
 
-;
 (function () {
     "use strict";
 
     // Establish the root object.
     var root = this;
 
+    // Establish the helper object
     var helpers = {
 
+        // Return the beat sheet breakpoints
         findBreakpoints : function ( range ) {
             return [1 / range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
         },
@@ -38,116 +39,117 @@
             return breakpoints.map( distributor );
         },
 
-        build : function ( outline ) {
+        // Return a JSON with all the beats
+        populate : function ( position ) {
             return [
                 {
                     "beat" : "The opening image",
-                    "begin" : outline[0],
+                    "begin" : position[0],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Theme Stated",
-                    "begin" : outline[1],
+                    "begin" : position[1],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Set-up",
-                    "begin" : outline[0],
-                    "end" : outline[2]
+                    "begin" : position[0],
+                    "end" : position[2]
                 },
                 {
                     "beat" : "Statis=Death",
-                    "begin" : outline[3],
+                    "begin" : position[3],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Catalyst",
-                    "begin" : outline[4],
+                    "begin" : position[4],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Debate",
-                    "begin" : outline[4],
-                    "end" : outline[5]
+                    "begin" : position[4],
+                    "end" : position[5]
                 },
                 {
                     "beat" : "Break into two",
-                    "begin" : outline[5],
+                    "begin" : position[5],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "B-story",
-                    "begin" : outline[6],
+                    "begin" : position[6],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Fun and Games",
-                    "begin" : outline[6],
-                    "end" : outline[7]
+                    "begin" : position[6],
+                    "end" : position[7]
                 },
                 {
                     "beat" : "Midpoint",
-                    "begin" : outline[7],
+                    "begin" : position[7],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Bad Guys close in",
-                    "begin" : outline[7],
-                    "end" : outline[8]
+                    "begin" : position[7],
+                    "end" : position[8]
                 },
                 {
                     "beat" : "All Is Lost",
-                    "begin" : outline[8],
+                    "begin" : position[8],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Dark Night of the Soul",
-                    "begin" : outline[8],
-                    "end" : outline[9]
+                    "begin" : position[8],
+                    "end" : position[9]
                 },
                 {
                     "beat" : "Break Into Three",
-                    "begin" : outline[9],
+                    "begin" : position[9],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Gathering the team",
-                    "begin" : outline[10],
+                    "begin" : position[10],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Executing the Plan",
-                    "begin" : outline[11],
+                    "begin" : position[11],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "The Height Tower Surprise",
-                    "begin" : outline[12],
+                    "begin" : position[12],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Dig, Deep Down",
-                    "begin" : outline[13],
+                    "begin" : position[13],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "The Execution of the New Plan",
-                    "begin" : outline[14],
+                    "begin" : position[14],
                     "end" : "NULL"
                 },
                 {
                     "beat" : "Final Image",
-                    "begin" : outline[15],
+                    "begin" : position[15],
                     "end" : "NULL"
                 }
             ];
         }
     };
 
-    // Create the beatsheet object.
+    // The beatsheet object returns the beat sheet as a JSON
     var beatsheet = function ( size ) {
         var distribution = helpers.findDistribution( size );
-        var result = helpers.build( distribution );
+        var result = helpers.populate( distribution );
         return JSON.stringify( result );
     };
 

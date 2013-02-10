@@ -5,8 +5,6 @@
 
     "use strict";
 
-    var range = [1, 4, 8, 9, 10, 20, 24, 50, 68, 77, 81, 85, 89, 93, 97, 100];
-
     var result = [
         {
             "beat" :"The opening image",
@@ -112,22 +110,8 @@
 
     var serializedResult = JSON.stringify(result);
 
-//    describe('#findDistribution', function () {
-//        it('returns the breakpoints distributed over the range', function () {
-//            var output = beatsheet.findDistribution(100);
-//            expect(output).to.eql(range);
-//        });
-//    });
-
-//    describe('#print', function () {
-//        it('returns a description of the output', function () {
-//            var output = beatsheet.print(range);
-//            expect(output).to.eql(serializedResult);
-//        });
-//    });
-
-    describe('beatsheet', function () {
-        it('returns the beatsheet based the given input', function () {
+    describe('Beatsheet', function () {
+        it('returns the beatsheet based on the given input', function () {
             var output = beatsheet(100);
             expect(output).to.eql(serializedResult);
         });
