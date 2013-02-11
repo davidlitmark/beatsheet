@@ -1,6 +1,5 @@
 .DS_Store
 .idea
-dist/
 *.sublime-project
 *.sublime-workspace
 node_modules/
