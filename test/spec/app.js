@@ -5,115 +5,113 @@
 
     "use strict";
 
-    var result = [
+    var beats = [
         {
-            "beat" :"The opening image",
+            "title" :"The opening image",
             "begin":1,
             "end"  :"NULL"
         },
         {
-            "beat" :"Theme Stated",
+            "title" :"Theme Stated",
             "begin":4,
             "end"  :"NULL"
         },
         {
-            "beat" :"Set-up",
+            "title" :"Set-up",
             "begin":1,
             "end"  :8
         },
         {
-            "beat" :"Statis=Death",
+            "title" :"Stasis=Death",
             "begin":9,
             "end"  :"NULL"
         },
         {
-            "beat" :"Catalyst",
+            "title" :"Catalyst",
             "begin":10,
             "end"  :"NULL"
         },
         {
-            "beat" :"Debate",
+            "title" :"Debate",
             "begin":10,
             "end"  :20
         },
         {
-            "beat" :"Break into two",
+            "title" :"Break into two",
             "begin":20,
             "end"  :"NULL"
         },
         {
-            "beat" :"B-story",
+            "title" :"B-story",
             "begin":24,
             "end"  :"NULL"
         },
         {
-            "beat" :"Fun and Games",
+            "title" :"Fun and Games",
             "begin":24,
             "end"  :50
         },
         {
-            "beat" :"Midpoint",
+            "title" :"Midpoint",
             "begin":50,
             "end"  :"NULL"
         },
         {
-            "beat" :"Bad Guys close in",
+            "title" :"Bad Guys close in",
             "begin":50,
             "end"  :68
         },
         {
-            "beat" :"All Is Lost",
+            "title" :"All Is Lost",
             "begin":68,
             "end"  :"NULL"
         },
         {
-            "beat" :"Dark Night of the Soul",
+            "title" :"Dark Night of the Soul",
             "begin":68,
             "end"  :77
         },
         {
-            "beat" :"Break Into Three",
+            "title" :"Break Into Three",
             "begin":77,
             "end"  :"NULL"
         },
         {
-            "beat" :"Gathering the team",
+            "title" :"Gathering the team",
             "begin":81,
             "end"  :"NULL"
         },
         {
-            "beat" :"Executing the Plan",
+            "title" :"Executing the Plan",
             "begin":85,
             "end"  :"NULL"
         },
         {
-            "beat" :"The Height Tower Surprise",
+            "title" :"The Height Tower Surprise",
             "begin":89,
             "end"  :"NULL"
         },
         {
-            "beat" :"Dig, Deep Down",
+            "title" :"Dig, Deep Down",
             "begin":93,
             "end"  :"NULL"
         },
         {
-            "beat" :"The Execution of the New Plan",
+            "title" :"The Execution of the New Plan",
             "begin":97,
             "end"  :"NULL"
         },
         {
-            "beat" :"Final Image",
+            "title" :"Final Image",
             "begin":100,
             "end"  :"NULL"
         }
     ];
 
-    var serializedResult = JSON.stringify(result);
-
     describe('Beatsheet', function () {
         it('returns the beatsheet based on the given input', function () {
             var output = beatsheet(100);
-            expect(output).to.eql(serializedResult);
+            expect(output).to.eql(beats);
         });
     });
 

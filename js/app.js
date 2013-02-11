@@ -6,7 +6,7 @@
 // sheet from his book Save The Cat!, but adjusted for novels based on my own
 // preferences, and with additions from his latest book:
 //   * The length of act 1 is 1/5 instead of 1/4.
-//   * The statis=death beat is added. (1)
+//   * The stasis=death beat is added. (1)
 //   * The beats from the five-point finale are added. (1)
 //
 // (1) Mentioned in the book Save The Cat! Strikes Back.
@@ -43,102 +43,102 @@
         populate : function ( position ) {
             return [
                 {
-                    "beat" : "The opening image",
+                    "title" : "The opening image",
                     "begin" : position[0],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Theme Stated",
+                    "title" : "Theme Stated",
                     "begin" : position[1],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Set-up",
+                    "title" : "Set-up",
                     "begin" : position[0],
                     "end" : position[2]
                 },
                 {
-                    "beat" : "Statis=Death",
+                    "title" : "Stasis=Death",
                     "begin" : position[3],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Catalyst",
+                    "title" : "Catalyst",
                     "begin" : position[4],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Debate",
+                    "title" : "Debate",
                     "begin" : position[4],
                     "end" : position[5]
                 },
                 {
-                    "beat" : "Break into two",
+                    "title" : "Break into two",
                     "begin" : position[5],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "B-story",
+                    "title" : "B-story",
                     "begin" : position[6],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Fun and Games",
+                    "title" : "Fun and Games",
                     "begin" : position[6],
                     "end" : position[7]
                 },
                 {
-                    "beat" : "Midpoint",
+                    "title" : "Midpoint",
                     "begin" : position[7],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Bad Guys close in",
+                    "title" : "Bad Guys close in",
                     "begin" : position[7],
                     "end" : position[8]
                 },
                 {
-                    "beat" : "All Is Lost",
+                    "title" : "All Is Lost",
                     "begin" : position[8],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Dark Night of the Soul",
+                    "title" : "Dark Night of the Soul",
                     "begin" : position[8],
                     "end" : position[9]
                 },
                 {
-                    "beat" : "Break Into Three",
+                    "title" : "Break Into Three",
                     "begin" : position[9],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Gathering the team",
+                    "title" : "Gathering the team",
                     "begin" : position[10],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Executing the Plan",
+                    "title" : "Executing the Plan",
                     "begin" : position[11],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "The Height Tower Surprise",
+                    "title" : "The Height Tower Surprise",
                     "begin" : position[12],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Dig, Deep Down",
+                    "title" : "Dig, Deep Down",
                     "begin" : position[13],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "The Execution of the New Plan",
+                    "title" : "The Execution of the New Plan",
                     "begin" : position[14],
                     "end" : "NULL"
                 },
                 {
-                    "beat" : "Final Image",
+                    "title" : "Final Image",
                     "begin" : position[15],
                     "end" : "NULL"
                 }
@@ -149,8 +149,7 @@
     // The beatsheet object returns the beat sheet as a JSON
     var beatsheet = function ( size ) {
         var distribution = helpers.findDistribution( size );
-        var result = helpers.populate( distribution );
-        return JSON.stringify( result );
+        return helpers.populate( distribution );
     };
 
     // Export the beatsheet object.
