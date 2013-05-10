@@ -5,6 +5,8 @@
 
     "use strict";
 
+    var expect = chai.expect;
+
     var beats = [
         {
             "title" :"The opening image",
