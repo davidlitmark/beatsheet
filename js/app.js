@@ -18,7 +18,7 @@
     var root = this;
 
     // Establish the helper object
-    var helpers = {
+    var internal = {
 
         // Return the beat sheet breakpoints
         findBreakpoints : function ( range ) {
@@ -148,8 +148,8 @@
 
     // The beatsheet object returns the beat sheet as a JSON
     var beatsheet = function ( size ) {
-        var distribution = helpers.findDistribution( size );
-        return helpers.populate( distribution );
+        var distribution = internal.findDistribution( size );
+        return internal.populate( distribution );
     };
 
     // Export the beatsheet object.
