@@ -10,13 +10,15 @@ basePath = '';
 files = [
   MOCHA,
   MOCHA_ADAPTER,
-  'js/*.js'
+  'test/browser/chai.js',
+  'js/app.js',
+  'test/spec/app.js'
 ];
 
 
 // list of files to exclude
 exclude = [
-  
+
 ];
 
 
