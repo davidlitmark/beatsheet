@@ -23,7 +23,7 @@
     ],
     "main" : "grunt.js",
     "devDependencies" : {
-        "grunt" : "~0.3",
+        "grunt" : "~0.4.1",
         "grunt-mocha" : "~0.1"
     },
     "keywords" : [
