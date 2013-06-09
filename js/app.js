@@ -1,6 +1,6 @@
-// BeatSheet Calculator (for novels)
-// (c) 2013 David Litmark
-// The beatsheet calculator may be freely distributed under the MIT license.
+//! Beatsheet
+//! (c) 2013 David Litmark
+//! The beatsheet calculator may be freely distributed under the MIT license.
 
 // The beat sheet distribution is based on the original Blake Snyder BS2 beat
 // sheet from his book Save The Cat!, but adjusted for novels based on my own

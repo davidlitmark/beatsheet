@@ -19,17 +19,24 @@ module.exports = function(grunt) {
                 undef: true,
                 boss: true,
                 eqnull: true,
-                node: true
+                node: true,
+                globals: {
+                    it: true,
+                    describe: true,
+                    chai: true,
+                    beatsheet: true
+                }
             },
-            globals: {
-                it: true,
-                describe: true
-            }
+            all: ['Gruntfile.js','js/*.js','test/spec/*.js']
         },
-        min: {
+        uglify: {
+            options: {
+                preserveComments: 'some'
+            },
             dist: {
-                src: ['js/app.js'],
-                dest: 'dist/beatsheet.min.js'
+                files: {
+                    'dist/beatsheet.min.js' : ['js/app.js']
+                }
             }
         },
         karma: {
@@ -40,7 +47,9 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Default task.
-    grunt.registerTask('default', 'lint min');
+    grunt.registerTask('default', ['jshint', 'uglify']);
 };
