@@ -156,6 +156,6 @@
     root.beatsheet = beatsheet;
 
     // Current version
-    beatsheet.version = "0.1.0";
+    beatsheet.version = "0.1.2";
 
 }).call( this );
