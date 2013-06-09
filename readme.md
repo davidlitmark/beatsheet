@@ -23,6 +23,9 @@ Modern browsers, and IE9+.
 
 ##Changelog
 
+0.1.1 (2013/05/11)
+Adds Karma for browser testing
+
 0.1.0 (2013/02/10)
 Initial release
 
