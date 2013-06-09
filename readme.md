@@ -1,6 +1,8 @@
-# Beat Sheet Calculator (for novels and short stories)
+# Beat Sheet Calculator
 
-The Beat Sheet returns a JSON with all the beats and where they should appear in your story. The beats are from the Blake Snyder Beat Sheet or the "BS2" which includes the 15 essential "beats" or plot points that all stories should contain, according to the [Blake Snyder beat sheet][bs2] from his book [Save The Cat!][sc]. It also includes additions from [Save The Cat! Strikes Back][scsb]. To better suit novels and short stories the first act is a bit shorter, based on input from [Plot & Stucture (James Scott Bell)][ps]. The reasoning behind this is that a written text demands more involvement from the reader than a movie that you can just sit back and watch, thus we must involve the reader sooner.
+The Beat Sheet returns a JSON with all the beats and where they should appear in your story. The beats are from the Blake Snyder Beat Sheet or the "BS2" which includes the 15 essential "beats" or plot points that all stories should contain, according to the [Blake Snyder beat sheet][bs2] from his book [Save The Cat!][sc]. It also includes additions from [Save The Cat! Strikes Back][scsb].
+
+To better suit novels and short stories the first act is a bit shorter, based on input from [Plot & Stucture (James Scott Bell)][ps]. The reasoning behind this is that a written text demands more involvement from the reader than a movie that you can just sit back and watch, hence we must involve the reader sooner.
 
 Compared to the original BS2 beat sheet the following are modifications are made:
 
