@@ -1,7 +1,7 @@
 {
   "name": "beatsheet",
-  "description": "",
-  "version": "0.1.0",
+  "description": "The Beat Sheet returns a JSON with all the beats and where they should appear in your story.",
+  "version": "0.1.1",
   "homepage": "https://github.com/davidlitmark/beatsheet",
   "author": {
     "name": "David Litmark",
@@ -21,15 +21,15 @@
       "url": "https://github.com/davidlitmark/beatsheet/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "grunt.js",
+  "main": "dist/beatsheet.min.js",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-mocha": "~0.1",
     "grunt-karma": "~0.4.4"
   },
   "keywords": [
     "novel",
     "plot",
-    "structure"
+    "structure",
+    "beatsheet"
   ]
 }
