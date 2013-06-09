@@ -23,6 +23,9 @@ Modern browsers, and IE9+.
 
 ##Changelog
 
+0.1.2 (2013/06/09)
+Better lint and minification
+
 0.1.1 (2013/05/11)
 Adds Karma for browser testing
 
