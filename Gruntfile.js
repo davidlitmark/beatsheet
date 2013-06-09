@@ -35,7 +35,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dist/beatsheet.min.js' : ['js/app.js']
+                    'dist/beatsheet.min.js' : ['js/beatsheet.js']
                 }
             }
         },

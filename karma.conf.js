@@ -11,8 +11,8 @@ files = [
   MOCHA,
   MOCHA_ADAPTER,
   'test/browser/chai.js',
-  'js/app.js',
-  'test/spec/app.js'
+  'js/beatsheet.js',
+  'test/spec/beatsheet.js'
 ];
 
 
