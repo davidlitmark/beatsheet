@@ -12,12 +12,12 @@
 // (1) Mentioned in the book Save The Cat! Strikes Back.
 
 (function () {
-    "use strict";
+    'use strict';
 
     // Establish the root object.
     var root = this;
 
-    // Establish the helper object
+    // Establish the internal object
     var internal = {
 
         // Return the beat sheet breakpoints
@@ -146,6 +146,7 @@
         }
     };
 
+
     // The beatsheet object returns the beat sheet as a JSON
     var beatsheet = function ( size ) {
         var distribution = internal.findDistribution( size );
@@ -156,6 +157,6 @@
     root.beatsheet = beatsheet;
 
     // Current version
-    beatsheet.version = "0.1.2";
+    beatsheet.version = '0.1.2';
 
 }).call( this );
