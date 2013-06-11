@@ -17,25 +17,31 @@
     // Establish the root object.
     var root = this;
 
-    // Establish the internal object
-    var internal = {
+    // Establish the helper object.
+    var Helper = function(range, strategy) {
+        this.range = range;
+        this.strategy = strategy;
+    };
+
+    Helper.prototype = {
 
         // Return the beat sheet breakpoints
-        findBreakpoints : function ( range ) {
-            return [1 / range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
+        findBreakpoints : function () {
+            return this.strategy();
         },
 
         // Function for calculating distributions
-        distribute : function ( range ) {
+        distribute : function () {
+            var range = this.range;
             return function ( m ) {
                 return Math.ceil( m * range );
             };
         },
 
         // Find the distribution over the range. The range can be either the page count or word count.
-        findDistribution : function ( range ) {
-            var breakpoints = this.findBreakpoints( range );
-            var distributor = this.distribute( range );
+        findDistribution : function () {
+            var breakpoints = this.findBreakpoints();
+            var distributor = this.distribute();
             return breakpoints.map( distributor );
         },
 
@@ -146,11 +152,18 @@
         }
     };
 
+    var novelStrategy = function(){
+        return [1 / this.range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
+    };
+
 
     // The beatsheet object returns the beat sheet as a JSON
-    var beatsheet = function ( size ) {
-        var distribution = internal.findDistribution( size );
-        return internal.populate( distribution );
+    var beatsheet = function ( size, strategy ) {
+        if ( strategy === 'novel' ){
+            var helper = new Helper( size, novelStrategy );
+            var distribution = helper.findDistribution();
+            return helper.populate( distribution );
+        }
     };
 
     // Export the beatsheet object.

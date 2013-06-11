@@ -111,8 +111,8 @@
     ];
 
     describe('Beatsheet', function () {
-        it('returns the beatsheet based on the given input', function () {
-            var output = beatsheet(100);
+        it('returns the beatsheet based on the given input and strategy', function () {
+            var output = beatsheet(100, 'novel');
             expect(output).to.eql(beats);
         });
     });
