@@ -4,9 +4,6 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        lint: {
-            files: ['grunt.js', 'test/specs/*.js']
-        },
         jshint: {
             options: {
                 curly: true,
