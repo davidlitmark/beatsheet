@@ -110,6 +110,8 @@
         }
     ];
 
+    //TODO: Add tests for input values
+
     describe('Beatsheet', function () {
         it('returns the beatsheet based on the given input and strategy', function () {
             var output = beatsheet(100, 'novel');

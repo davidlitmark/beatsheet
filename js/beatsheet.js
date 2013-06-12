@@ -152,18 +152,28 @@
         }
     };
 
-    var novelStrategy = function(){
-        return [1 / this.range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
+    // Establish the available strategies
+    var strategies = {
+        novel : function(){
+            return [1 / this.range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
+        }
     };
 
 
     // The beatsheet object returns the beat sheet as a JSON
     var beatsheet = function ( size, strategy ) {
-        if ( strategy === 'novel' ){
-            var helper = new Helper( size, novelStrategy );
-            var distribution = helper.findDistribution();
-            return helper.populate( distribution );
+
+        if ( typeof size !== 'number' || size <= 0 ) {
+            throw new Error('The size must be a number larger than 0.');
         }
+
+        if ( !strategies[strategy] ) {
+            throw new Error('The specified strategy does not exist.');
+        }
+
+        var helper = new Helper( size, strategies[strategy] );
+        var distribution = helper.findDistribution();
+        return helper.populate( distribution );
     };
 
     // Export the beatsheet object.
