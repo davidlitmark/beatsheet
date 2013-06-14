@@ -12,6 +12,7 @@
 // (1) Mentioned in the book Save The Cat! Strikes Back.
 
 (function () {
+
     'use strict';
 
     // Establish the root object.
@@ -154,7 +155,7 @@
 
     // Establish the available strategies
     var strategies = {
-        novel : function(){
+        fiction : function(){
             return [1 / this.range, 0.04, 0.08, 0.09, 0.1, 0.2, 0.24, 0.5, 0.68, 0.77, 0.81, 0.85, 0.89, 0.93, 0.97, 1];
         },
         bs2 : function(){

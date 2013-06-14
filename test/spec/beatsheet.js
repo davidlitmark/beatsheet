@@ -1,5 +1,4 @@
-// Tests for BeatSheet Calculator (for novels)
-// (c) 2013 David Litmark
+// Tests - beatsheet.js
 
 (function () {
 
@@ -113,7 +112,7 @@
 
     describe('Beatsheet', function () {
         it('returns the beatsheet based on the given input and strategy', function () {
-            var output = beatsheet(100, 'novel');
+            var output = beatsheet(100, 'fiction');
             expect(output).to.eql(beats);
         });
 
@@ -121,11 +120,11 @@
         describe('the size param', function() {
 
             it('should be a number', function () {
-                expect(function(){ beatsheet('100', 'novel'); }).to.throw(Error);
+                expect(function(){ beatsheet('100', 'fiction'); }).to.throw(Error);
             });
 
             it('should be greater than 0', function () {
-                expect(function(){ beatsheet(-1, 'novel'); }).to.throw(Error);
+                expect(function(){ beatsheet(-1, 'fiction'); }).to.throw(Error);
             });
 
         });
