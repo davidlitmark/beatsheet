@@ -110,15 +110,36 @@
         }
     ];
 
-    //TODO: Add tests for input values
 
     describe('Beatsheet', function () {
         it('returns the beatsheet based on the given input and strategy', function () {
             var output = beatsheet(100, 'novel');
             expect(output).to.eql(beats);
         });
-    });
 
+
+        describe('the size param', function() {
+
+            it('should be a number', function () {
+                expect(function(){ beatsheet('100', 'novel'); }).to.throw(Error);
+            });
+
+            it('should be greater than 0', function () {
+                expect(function(){ beatsheet(-1, 'novel'); }).to.throw(Error);
+            });
+
+        });
+
+        describe('the strategies param', function() {
+
+            it('should exist', function () {
+                expect(function(){ beatsheet(100, 'fail'); }).to.throw(Error);
+            });
+
+        });
+
+
+    });
 
 })();
 
