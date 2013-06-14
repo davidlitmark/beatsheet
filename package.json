@@ -1,7 +1,7 @@
 {
   "name": "beatsheet",
   "description": "The Beat Sheet returns a JSON with all the beats and where they should appear in your story.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/davidlitmark/beatsheet",
   "author": {
     "name": "David Litmark",
