@@ -184,6 +184,6 @@
     root.beatsheet = beatsheet;
 
     // Current version
-    beatsheet.version = '0.1.2';
+    beatsheet.version = '0.1.3';
 
 }).call( this );
